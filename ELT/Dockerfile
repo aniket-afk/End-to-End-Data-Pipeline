@@ -11,9 +11,14 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 
 # Install PostgreSQL client tools for version 17
 RUN apt-get update && apt-get install -y \
-    postgresql-client-17
+    postgresql-client-17 \
+    cron
 
+COPY start.sh /app/start.sh
 COPY elt_script.py .
+
+WORKDIR /app
+RUN echo "0 3 * * * python /app/elt_script.py" | crontab -
 
 CMD ["python","elt_script.py"]
 
