@@ -175,5 +175,3 @@ MIT License. See [LICENSE](LICENSE) for details.
 - `psycopg2` and `pg_dump` for enabling seamless data migration.
 - dbt and Airflow communities for transformation and orchestration tools.
 ```
-
-This README provides a comprehensive overview of the project, setup instructions, and future goals. Adapt the GitHub URL, license, or acknowledgments as needed! 🚀
